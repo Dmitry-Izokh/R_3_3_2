@@ -26,7 +26,7 @@ namespace R_3_3_2
             try
             {
                 // 2 строчки ниже это стандартная запись для выбора элементов кликом.
-                selectedElementRefList = uidoc.Selection.PickObjects(ObjectType.Face, "Выберете элемент");
+                selectedElementRefList = uidoc.Selection.PickObjects(ObjectType.Face, "Выберете трубы");
                 var pipeList = new List<Pipe>();
 
                 // Перебираем спиок выбранных элементов и если в этом списке встречается нужный нам тип элемента,
@@ -70,7 +70,7 @@ namespace R_3_3_2
                 // Создаем переменную для в которую рассчитаем значение суммы всех элементов получившегося списка.
                 double sumLength = lengthSelectedWallList.ToArray().Sum();
                 //Выводим результат в диалоговое окно.
-                TaskDialog.Show("Суммарный объем", $"{sumLength}");
+                TaskDialog.Show("Суммарная длина", $"{sumLength}");
             }
             catch (Autodesk.Revit.Exceptions.OperationCanceledException)
             { }
